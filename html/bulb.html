@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+		<link rel="stylesheet" href="../css/bulb.css">
 		<title>bulb switch</title>
 	</head>
 
@@ -11,15 +11,17 @@
 		<div id="app">
 			<div class="bulb">
 				<div>
-					<img src="../image/bulbon.gif" v-if="bulbon" />
+					<img v-bind:src="img1" v-show="bulbon" />
 				</div>
 	
 				<div>
-					<img src="../image/bulb.gif" v-if="!bulbon" />
+					<img v-bind:src="img2" v-show="!bulbon" />
 				</div>
 			</div>
+			<div class="btn">
+				<button v-on:click="switchBulb">switch</button> 
+			</div>
 			
-			<button v-on:click="switchBulb">switch</button> 
 			<!-- v-on:click="switch" -->
 		</div>
 		<script src="../js/vue.js"></script>
